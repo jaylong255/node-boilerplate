@@ -14,3 +14,7 @@ RUN adduser --system --no-create-home --uid $HOST_USER_UID --ingroup app webuser
 
 WORKDIR /app
 COPY --chown=webuser:app . /app/
+
+RUN npm install
+
+# CMD [ "npm", "start" ]

@@ -1,0 +1,20 @@
+version: "3.5"
+services:
+
+  app:
+    container_name: app
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      target: app
+    image: 
+    working_dir: /app
+    volumes:
+      - ./:/app
+    networks:
+      - myappyo
+    image: myappyo-node
+
+networks:
+  myappyo:
+    driver: bridge
